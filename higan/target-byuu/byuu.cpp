@@ -10,7 +10,7 @@ auto locate(const string& name) -> string {
   string location = {Path::program(), name};
   if(inode::exists(location)) return location;
 
-  location = {Path::userData(), "byuu/", name};
+  location = {Path::sharedData(), "byuu/", name};
   if(inode::exists(location)) return location;
 
   directory::create({Path::userSettings(), "byuu/"});
